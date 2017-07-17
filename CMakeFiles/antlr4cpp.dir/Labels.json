@@ -1,0 +1,51 @@
+
+{
+	"sources" : 
+	[
+		
+		{
+			"file" : "/home/bsh8y/Desktop/projects/side_projects/Discord_bot/CMakeFiles/antlr4cpp"
+		},
+		
+		{
+			"file" : "/home/bsh8y/Desktop/projects/side_projects/Discord_bot/CMakeFiles/antlr4cpp.rule"
+		},
+		
+		{
+			"file" : "/home/bsh8y/Desktop/projects/side_projects/Discord_bot/CMakeFiles/antlr4cpp-complete.rule"
+		},
+		
+		{
+			"file" : "/home/bsh8y/Desktop/projects/side_projects/Discord_bot/lib/antlr/locals/antlr4cpp/src/antlr4cpp-stamp/antlr4cpp-install.rule"
+		},
+		
+		{
+			"file" : "/home/bsh8y/Desktop/projects/side_projects/Discord_bot/lib/antlr/locals/antlr4cpp/src/antlr4cpp-stamp/antlr4cpp-mkdir.rule"
+		},
+		
+		{
+			"file" : "/home/bsh8y/Desktop/projects/side_projects/Discord_bot/lib/antlr/locals/antlr4cpp/src/antlr4cpp-stamp/antlr4cpp-download.rule"
+		},
+		
+		{
+			"file" : "/home/bsh8y/Desktop/projects/side_projects/Discord_bot/lib/antlr/locals/antlr4cpp/src/antlr4cpp-stamp/antlr4cpp-update.rule"
+		},
+		
+		{
+			"file" : "/home/bsh8y/Desktop/projects/side_projects/Discord_bot/lib/antlr/locals/antlr4cpp/src/antlr4cpp-stamp/antlr4cpp-patch.rule"
+		},
+		
+		{
+			"file" : "/home/bsh8y/Desktop/projects/side_projects/Discord_bot/lib/antlr/locals/antlr4cpp/src/antlr4cpp-stamp/antlr4cpp-configure.rule"
+		},
+		
+		{
+			"file" : "/home/bsh8y/Desktop/projects/side_projects/Discord_bot/lib/antlr/locals/antlr4cpp/src/antlr4cpp-stamp/antlr4cpp-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : [ "antlr4cpp" ],
+		"name" : "antlr4cpp"
+	}
+}

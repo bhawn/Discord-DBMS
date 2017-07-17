@@ -1,0 +1,13 @@
+# Target labels
+ antlr4cpp
+# Source files and their labels
+/home/bsh8y/Desktop/projects/side_projects/Discord_bot/CMakeFiles/antlr4cpp
+/home/bsh8y/Desktop/projects/side_projects/Discord_bot/CMakeFiles/antlr4cpp.rule
+/home/bsh8y/Desktop/projects/side_projects/Discord_bot/CMakeFiles/antlr4cpp-complete.rule
+/home/bsh8y/Desktop/projects/side_projects/Discord_bot/lib/antlr/locals/antlr4cpp/src/antlr4cpp-stamp/antlr4cpp-install.rule
+/home/bsh8y/Desktop/projects/side_projects/Discord_bot/lib/antlr/locals/antlr4cpp/src/antlr4cpp-stamp/antlr4cpp-mkdir.rule
+/home/bsh8y/Desktop/projects/side_projects/Discord_bot/lib/antlr/locals/antlr4cpp/src/antlr4cpp-stamp/antlr4cpp-download.rule
+/home/bsh8y/Desktop/projects/side_projects/Discord_bot/lib/antlr/locals/antlr4cpp/src/antlr4cpp-stamp/antlr4cpp-update.rule
+/home/bsh8y/Desktop/projects/side_projects/Discord_bot/lib/antlr/locals/antlr4cpp/src/antlr4cpp-stamp/antlr4cpp-patch.rule
+/home/bsh8y/Desktop/projects/side_projects/Discord_bot/lib/antlr/locals/antlr4cpp/src/antlr4cpp-stamp/antlr4cpp-configure.rule
+/home/bsh8y/Desktop/projects/side_projects/Discord_bot/lib/antlr/locals/antlr4cpp/src/antlr4cpp-stamp/antlr4cpp-build.rule

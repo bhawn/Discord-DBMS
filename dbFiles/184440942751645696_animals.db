@@ -1,0 +1,8 @@
+namekindage
+VARCHAR(20)VARCHAR(8)INTEGER
+namekind
+"Joe""cat"4
+"Spot""dog"10
+"Snoopy""dog"3
+"Tweety""bird"1
+"Joe""bird"2

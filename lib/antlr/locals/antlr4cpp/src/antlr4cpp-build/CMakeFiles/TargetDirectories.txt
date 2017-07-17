@@ -1,0 +1,15 @@
+/home/bsh8y/Desktop/projects/side_projects/Discord_bot/lib/antlr/locals/antlr4cpp/src/antlr4cpp-build/CMakeFiles/install/strip.dir
+/home/bsh8y/Desktop/projects/side_projects/Discord_bot/lib/antlr/locals/antlr4cpp/src/antlr4cpp-build/CMakeFiles/install/local.dir
+/home/bsh8y/Desktop/projects/side_projects/Discord_bot/lib/antlr/locals/antlr4cpp/src/antlr4cpp-build/CMakeFiles/edit_cache.dir
+/home/bsh8y/Desktop/projects/side_projects/Discord_bot/lib/antlr/locals/antlr4cpp/src/antlr4cpp-build/CMakeFiles/rebuild_cache.dir
+/home/bsh8y/Desktop/projects/side_projects/Discord_bot/lib/antlr/locals/antlr4cpp/src/antlr4cpp-build/CMakeFiles/list_install_components.dir
+/home/bsh8y/Desktop/projects/side_projects/Discord_bot/lib/antlr/locals/antlr4cpp/src/antlr4cpp-build/CMakeFiles/install.dir
+/home/bsh8y/Desktop/projects/side_projects/Discord_bot/lib/antlr/locals/antlr4cpp/src/antlr4cpp-build/runtime/CMakeFiles/rebuild_cache.dir
+/home/bsh8y/Desktop/projects/side_projects/Discord_bot/lib/antlr/locals/antlr4cpp/src/antlr4cpp-build/runtime/CMakeFiles/antlr4_shared.dir
+/home/bsh8y/Desktop/projects/side_projects/Discord_bot/lib/antlr/locals/antlr4cpp/src/antlr4cpp-build/runtime/CMakeFiles/install.dir
+/home/bsh8y/Desktop/projects/side_projects/Discord_bot/lib/antlr/locals/antlr4cpp/src/antlr4cpp-build/runtime/CMakeFiles/list_install_components.dir
+/home/bsh8y/Desktop/projects/side_projects/Discord_bot/lib/antlr/locals/antlr4cpp/src/antlr4cpp-build/runtime/CMakeFiles/antlr4_static.dir
+/home/bsh8y/Desktop/projects/side_projects/Discord_bot/lib/antlr/locals/antlr4cpp/src/antlr4cpp-build/runtime/CMakeFiles/install/strip.dir
+/home/bsh8y/Desktop/projects/side_projects/Discord_bot/lib/antlr/locals/antlr4cpp/src/antlr4cpp-build/runtime/CMakeFiles/install/local.dir
+/home/bsh8y/Desktop/projects/side_projects/Discord_bot/lib/antlr/locals/antlr4cpp/src/antlr4cpp-build/runtime/CMakeFiles/make_lib_output_dir.dir
+/home/bsh8y/Desktop/projects/side_projects/Discord_bot/lib/antlr/locals/antlr4cpp/src/antlr4cpp-build/runtime/CMakeFiles/edit_cache.dir
