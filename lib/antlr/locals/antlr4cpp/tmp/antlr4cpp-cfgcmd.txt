@@ -1,1 +1,0 @@
-cmd='/usr/local/bin/cmake;-DCMAKE_BUILD_TYPE=Release;-DANTLR4CPP_JAR_LOCATION=/home/bsh8y/Desktop/projects/side_projects/Discord_bot/lib/antlr/thirdparty/antlr/antlr-4.7-complete.jar;-DBUILD_SHARED_LIBS=ON;-BUILD_TESTS=OFF;-DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR>;-DCMAKE_SOURCE_DIR:PATH=<SOURCE_DIR>/runtime/Cpp;<SOURCE_DIR>/runtime/Cpp'
