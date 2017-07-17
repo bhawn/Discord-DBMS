@@ -71,6 +71,12 @@ void handler(int sig, siginfo_t *si, void *uc) {
     }
 }
 
+/*
+These two lines were added to bot.hh:
+    std::map<std::string, time_t> time_stamp;
+    std::map<std::string, parseTreeVisitor> ptv;
+*/
+
 int main() 
 {
     
