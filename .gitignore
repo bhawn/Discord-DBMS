@@ -4,3 +4,5 @@ CMakeCache.txt
 Makefile
 token.dat
 CMakeFiles/
+lib/antlr/antlr4cpp_generated_src/
+lib/antlr/locals/
