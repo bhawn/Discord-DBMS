@@ -265,6 +265,12 @@ Discord_Benbot_BINARY_DIR:STATIC=/home/bsh8y/Desktop/projects/side_projects/Disc
 //Value Computed by CMake
 Discord_Benbot_SOURCE_DIR:STATIC=/home/bsh8y/Desktop/projects/side_projects/Discord_bot
 
+//Value Computed by CMake
+Discord_DBMS_BINARY_DIR:STATIC=/home/bsh8y/Desktop/projects/side_projects/Discord_bot
+
+//Value Computed by CMake
+Discord_DBMS_SOURCE_DIR:STATIC=/home/bsh8y/Desktop/projects/side_projects/Discord_bot
+
 //Git command line client
 GIT_EXECUTABLE:FILEPATH=/usr/bin/git
 

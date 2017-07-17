@@ -1,5 +1,5 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.6)
-project(Discord_Benbot)
+project(Discord_DBMS)
 
 SET (CMAKE_CXX_STANDARD 11)
 
@@ -26,14 +26,14 @@ antlr4cpp_process_grammar(demo antlrcpptest
 include_directories(${antlr4cpp_include_dirs_antlrcpptest})
 
 # add generated grammar to demo binary target
-add_executable(Discord_Benbot ${antlr4cpp_src_files_antlrcpptest} ${SOURCE_FILES})
+add_executable(Discord_DBMS ${antlr4cpp_src_files_antlrcpptest} ${SOURCE_FILES})
 
 add_subdirectory(lib/discordpp)
 find_package(Boost REQUIRED system filesystem)
 INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIRS} ${discordpp_INCLUDE_DIRS})
 
-add_dependencies(Discord_Benbot antlr4cpp antlr4cpp_generation_antlrcpptest)
-target_link_libraries(Discord_Benbot ${Boost_LIBRARIES} discordpp antlr4-runtime rt)
+add_dependencies(Discord_DBMS antlr4cpp antlr4cpp_generation_antlrcpptest)
+target_link_libraries(Discord_DBMS ${Boost_LIBRARIES} discordpp antlr4-runtime rt)
 
 foreach(DATFILE softcommands.dat token.dat) #login.dat
     #file(REMOVE ${CMAKE_BINARY_DIR}/${DATFILE})

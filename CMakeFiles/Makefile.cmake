@@ -75,8 +75,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/antlr4cpp.dir/DependInfo.cmake"
-  "CMakeFiles/Discord_Benbot.dir/DependInfo.cmake"
   "CMakeFiles/antlr4cpp_generation_antlrcpptest.dir/DependInfo.cmake"
+  "CMakeFiles/Discord_DBMS.dir/DependInfo.cmake"
   "lib/discordpp/CMakeFiles/discordpp.dir/DependInfo.cmake"
   "lib/discordpp/lib/curlpp/CMakeFiles/curlpp_static.dir/DependInfo.cmake"
   "lib/discordpp/lib/curlpp/CMakeFiles/curlpp.dir/DependInfo.cmake"

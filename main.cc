@@ -39,38 +39,6 @@ struct handler_data {
 //
 /************************************************************************/
 
-std::map<std::string, std::string> loadSoftCommands(std::string softFilePath){
-    std::ifstream softfile(softFilePath);
-    std::map<std::string, std::string> soft_commands;
-    if (softfile.is_open()) {
-        while(!softfile.eof()){
-            std::string command;
-            std::getline(softfile, command);
-            std::string blurb; // Currently unused.
-            std::getline(softfile, blurb);
-            std::string output;
-            std::getline(softfile, output);
-            if(output == "{"){
-                output = "";
-                std::string nextline;
-                std::getline(softfile, nextline);
-                while(nextline != "}"){
-                    output += nextline;
-                    std::getline(softfile, nextline);
-                    if(nextline != "}"){
-                        output += "\n";
-                    }
-                }
-            }
-            soft_commands[command] = output;
-        }
-    } else {
-        std::cerr << "Warning: There is no such files as " + softFilePath + "! Copy the example softcommands.dat to make one.\n";
-    }
-    softfile.close();
-    return soft_commands;
-}
-
 std::string readTokenFile(std::string tokenFilePath){
     std::ifstream tokenFile;
     tokenFile.open(tokenFilePath);
@@ -97,7 +65,7 @@ void handler(int sig, siginfo_t *si, void *uc) {
             if(difftime (end, it->second) > 300) {
                 std::cout << "User: " << it->first << " has been away for too long. Wiping data.\n";
                 h_data->ptv->at(it->first).Engine.exit_cmd();
-                it->second = 0;
+                h_data->time_stamp->at(it->first) = 0;
             }
         }
     }
@@ -121,10 +89,6 @@ int main()
                   << "Copy the example login.dat or token.dat to make one.\n";
         exit(1);
     }
-    std::map<std::string, std::string> soft_commands = loadSoftCommands("softcommands.dat");
-    std::cout << "soft commands\n";
-    for(auto elem : soft_commands)
-        std::cout << elem.first << "\n" << elem.second << "\n\n";
         
     discordpp::Bot* bot = new discordpp::Bot(token);
     
@@ -165,7 +129,7 @@ int main()
     //
     /************************************************************************/
  
-    bot->addResponse("MESSAGE_CREATE", [soft_commands](discordpp::Bot *bot, json jmessage) {
+    bot->addResponse("MESSAGE_CREATE", [](discordpp::Bot *bot, json jmessage) {
         std::string statement = jmessage["d"]["content"].get<std::string>();
         statement.erase(0, statement.find_first_not_of(" \t\r\n"));
         

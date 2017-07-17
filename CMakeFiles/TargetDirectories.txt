@@ -3,9 +3,9 @@
 /home/bsh8y/Desktop/projects/side_projects/Discord_bot/CMakeFiles/install.dir
 /home/bsh8y/Desktop/projects/side_projects/Discord_bot/CMakeFiles/list_install_components.dir
 /home/bsh8y/Desktop/projects/side_projects/Discord_bot/CMakeFiles/antlr4cpp.dir
-/home/bsh8y/Desktop/projects/side_projects/Discord_bot/CMakeFiles/Discord_Benbot.dir
 /home/bsh8y/Desktop/projects/side_projects/Discord_bot/CMakeFiles/rebuild_cache.dir
 /home/bsh8y/Desktop/projects/side_projects/Discord_bot/CMakeFiles/antlr4cpp_generation_antlrcpptest.dir
+/home/bsh8y/Desktop/projects/side_projects/Discord_bot/CMakeFiles/Discord_DBMS.dir
 /home/bsh8y/Desktop/projects/side_projects/Discord_bot/CMakeFiles/edit_cache.dir
 /home/bsh8y/Desktop/projects/side_projects/Discord_bot/lib/discordpp/CMakeFiles/install/strip.dir
 /home/bsh8y/Desktop/projects/side_projects/Discord_bot/lib/discordpp/CMakeFiles/install/local.dir

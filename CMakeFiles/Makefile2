@@ -97,46 +97,6 @@ clean: CMakeFiles/antlr4cpp.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/Discord_Benbot.dir
-
-# All Build rule for target.
-CMakeFiles/Discord_Benbot.dir/all: CMakeFiles/antlr4cpp_generation_antlrcpptest.dir/all
-CMakeFiles/Discord_Benbot.dir/all: lib/discordpp/lib/curlpp/CMakeFiles/curlpp.dir/all
-CMakeFiles/Discord_Benbot.dir/all: lib/discordpp/CMakeFiles/discordpp.dir/all
-CMakeFiles/Discord_Benbot.dir/all: CMakeFiles/antlr4cpp.dir/all
-	$(MAKE) -f CMakeFiles/Discord_Benbot.dir/build.make CMakeFiles/Discord_Benbot.dir/depend
-	$(MAKE) -f CMakeFiles/Discord_Benbot.dir/build.make CMakeFiles/Discord_Benbot.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bsh8y/Desktop/projects/side_projects/Discord_bot/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target Discord_Benbot"
-.PHONY : CMakeFiles/Discord_Benbot.dir/all
-
-# Include target in all.
-all: CMakeFiles/Discord_Benbot.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/Discord_Benbot.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bsh8y/Desktop/projects/side_projects/Discord_bot/CMakeFiles 33
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Discord_Benbot.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bsh8y/Desktop/projects/side_projects/Discord_bot/CMakeFiles 0
-.PHONY : CMakeFiles/Discord_Benbot.dir/rule
-
-# Convenience name for target.
-Discord_Benbot: CMakeFiles/Discord_Benbot.dir/rule
-
-.PHONY : Discord_Benbot
-
-# clean rule for target.
-CMakeFiles/Discord_Benbot.dir/clean:
-	$(MAKE) -f CMakeFiles/Discord_Benbot.dir/build.make CMakeFiles/Discord_Benbot.dir/clean
-.PHONY : CMakeFiles/Discord_Benbot.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/Discord_Benbot.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/antlr4cpp_generation_antlrcpptest.dir
 
 # All Build rule for target.
@@ -165,6 +125,46 @@ CMakeFiles/antlr4cpp_generation_antlrcpptest.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/antlr4cpp_generation_antlrcpptest.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/Discord_DBMS.dir
+
+# All Build rule for target.
+CMakeFiles/Discord_DBMS.dir/all: CMakeFiles/antlr4cpp_generation_antlrcpptest.dir/all
+CMakeFiles/Discord_DBMS.dir/all: lib/discordpp/lib/curlpp/CMakeFiles/curlpp.dir/all
+CMakeFiles/Discord_DBMS.dir/all: lib/discordpp/CMakeFiles/discordpp.dir/all
+CMakeFiles/Discord_DBMS.dir/all: CMakeFiles/antlr4cpp.dir/all
+	$(MAKE) -f CMakeFiles/Discord_DBMS.dir/build.make CMakeFiles/Discord_DBMS.dir/depend
+	$(MAKE) -f CMakeFiles/Discord_DBMS.dir/build.make CMakeFiles/Discord_DBMS.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bsh8y/Desktop/projects/side_projects/Discord_bot/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target Discord_DBMS"
+.PHONY : CMakeFiles/Discord_DBMS.dir/all
+
+# Include target in all.
+all: CMakeFiles/Discord_DBMS.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/Discord_DBMS.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bsh8y/Desktop/projects/side_projects/Discord_bot/CMakeFiles 33
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Discord_DBMS.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bsh8y/Desktop/projects/side_projects/Discord_bot/CMakeFiles 0
+.PHONY : CMakeFiles/Discord_DBMS.dir/rule
+
+# Convenience name for target.
+Discord_DBMS: CMakeFiles/Discord_DBMS.dir/rule
+
+.PHONY : Discord_DBMS
+
+# clean rule for target.
+CMakeFiles/Discord_DBMS.dir/clean:
+	$(MAKE) -f CMakeFiles/Discord_DBMS.dir/build.make CMakeFiles/Discord_DBMS.dir/clean
+.PHONY : CMakeFiles/Discord_DBMS.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/Discord_DBMS.dir/clean
 
 .PHONY : clean
 
