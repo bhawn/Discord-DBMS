@@ -149,6 +149,8 @@ int main()
             uint64_t id = boost::lexical_cast<discordpp::snowflake>(sid);
             bot->ptv[user_id].Engine.id_c = id;                                 //Is there a way to only set this once?
             bot->ptv[user_id].Engine.user_id = user_id;
+            bot->ptv[user_id].Engine.write_lock = &bot->write_lock;
+            //initialize lock in bot.hh and pass it here
             try {
      			ANTLRInputStream input(statement);    
                 dmlLexer lex(&input);            
@@ -156,6 +158,7 @@ int main()
                 dmlParser parser(&tokens);    
                 parser.setErrorHandler(make_shared<BailErrorStrategy>());
                 tree::ParseTree *tree = parser.program(); 
+                //pass in a lock here
                 bot->ptv[user_id].tree::AbstractParseTreeVisitor::visit(tree);
             }
             catch(ParseCancellationException e) {
@@ -164,6 +167,11 @@ int main()
                      s = "Not a valid grammer. ";
                 } 
                 discordpp::DiscordAPI::channels::messages::create(id, "`" + s + "`");
+                //check if lock is locked <-- this wont work need to set flag 
+                if(bot->ptv[user_id].Engine.lock_check == true) {
+                    pthread_mutex_unlock(&bot->write_lock);
+                    bot->ptv[user_id].Engine.lock_check = false;
+                }
             }
             catch(RecognitionException e) { //No idea what the exception is. I have a guess but its never been called for what i test.
                 discordpp::DiscordAPI::channels::messages::create(id, "Error in parsing.");
