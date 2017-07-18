@@ -111,8 +111,12 @@ bool db_engine::compatible(Table *dest, Table *insert) {
 	return true;						//if no disagreeing types were found during iteration tables are compatible
 }
 
-bool db_engine::compatible(Table *t, vector<string> literals) {
-	return t->attributes.size() == literals.size();
+bool db_engine::compatible(Table *t, vector<string> literals) {					//discord change
+	if(t->attributes.size() >= literals.size()) 
+		return true;
+	else
+		return false;
+	//return t->attributes.size() == literals.size();
 }
 
 bool db_engine::set_compatible(Table *t1, Table *t2) {
@@ -133,6 +137,7 @@ bool db_engine::set_compatible(Table *t1, Table *t2) {
 //						COMMANDS
 //
 /************************************************************************/
+
 //Loads a relation from an existing database file
 void db_engine::open_cmd(string fl) {
 	
@@ -181,9 +186,8 @@ void db_engine::open_cmd(string fl) {
 	     }
 	     i++;
 	     line = "";
-	}
+	} 
 	open_tables.push_back(t);
-	current = find_table_by_name(fl);			
 	read.close();
 }
 
@@ -196,9 +200,90 @@ void db_engine::write_cmd(string name) {
 	write_cmd(*t);
 }
 
+
+//t: user_info.db
+//t1: our user data if it exists
+//t_check: table we are checking to see if it exists. /updating its info
+bool db_engine::user_info(Table t_check) {
+	Table t;
+	//----------------------------Get-Table-------------------------------------
+	ifstream read("user_info.db");
+		int i = 0;
+	string line = "";
+	while (getline(read, line)) {
+	     vector<string> table_info;
+	     stringstream ss(line);
+	     string parse_line = "";
+	     while (getline(ss,parse_line, '\x1e')) {	//1 line
+	          table_info.push_back(parse_line); 
+	          parse_line = "";
+	     }
+	     switch(i) {
+	     	case 0 : 
+	          	t.attributes = table_info;
+	          	break;
+	          case 1 :
+	          	t.types = table_info;
+	          	break;
+	          case 2 :
+	          	t.keys = table_info;
+	          	break;
+	          default :
+	          	t.data.push_back(table_info);
+	          	break;
+	     }
+	     i++;
+	     line = "";
+	}
+	read.close();
+	//------------------------------Find-user-id--------------------------------
+	Table t1 = eval(t,"USER_ID",user_id,"==");								//if user exists
+	if(t1.data.size() > 0 && t1.data[0].size() > 0) {							//maybe not need two conditions
+		bool exists = false;
+		for(int i = 0; i < t1.data[0].size(); ++i)								//if curr tables exists
+			if(t1.data[0][i] == t_check.name) {
+				update_cmd(&t, {t1.attributes[i]}, {t_check.name}, t1);			// need to add size
+				exists = true;
+			}
+		if(t1.data[0].size() < t1.attributes.size() && !exists)	{					// else if open slot
+			update_cmd(&t, {t1.attributes[t1.data[0].size()]}, {t_check.name}, t1);
+		}
+		else if(!exists) {
+			out_message("Error cannot write another table, limit is 3.");
+			return false;
+		}
+	}
+	else
+		insert_cmd(&t, {user_id, t_check.name});
+	//-----------------write table----------------------------------------------
+	ofstream write("user_info.db", ios::out | ios::trunc);
+	for(int i = 0; i < t.attributes.size(); ++i)
+		write << t.attributes[i] << '\x1e';
+	write << "\n";
+	for(int i=0; i< t.types.size(); ++i)
+		write << t.types[i] << '\x1e';
+	write << "\n";
+	for(int i = 0; i < t.keys.size(); ++i)
+		write << t.keys.at(i) << '\x1e';
+	write << "\n";
+	for(int i=0; i < t.data.size(); ++i){
+		for(int j = 0; j < t.data[i].size(); ++j)
+			write << t.data.at(i).at(j) << '\x1e';
+		write << "\n";
+	}
+    write.close();
+	return true;
+}
+
 //Adds a new relation to a file. Basically just adds updated info to file.
 void db_engine::write_cmd(Table t) {
-	t.save(id_c, user_id);
+	pthread_mutex_lock(write_lock);
+	lock_check = true;
+	bool can_save = user_info(t);
+	pthread_mutex_unlock(write_lock);
+	lock_check = false;
+	if(can_save)
+		t.save(id_c, user_id);
 }
 
 void db_engine::close_name(string name) {
@@ -254,7 +339,6 @@ void db_engine::create_cmd(string name, vector<string> attributes, vector<string
 		close_name(name);
 	}
 	Table* t = new Table(name,attributes,types,key);
-	current = t;
 	open_tables.push_back(t);
 }
 
@@ -263,13 +347,16 @@ void db_engine::update_cmd(Table *t1, vector<string> attribute_names, vector<str
 	if(t1 == NULL)
 		return;
 	int update_index;
-	for (int i=0; i<t2.data.size(); ++i) {							//iterate through table of values to update
-		update_index = t1->find(t2.data[i]);						//get index of the value we want to update
-		if (update_index >= 0) {									//if the index to be updated is valid
-			for (int j=0; j<attribute_names.size(); ++j) {			//iterate through NEW attributes
-				for (int k=0; k<t1->attributes.size(); ++k)			//iterate thourgh EXISTING attributes
-					if (t1->attributes[k] == attribute_names[j]) {	//if NEW = EXISTING
-						t1->data[update_index][k] = values[j];		//set table's data to the NEW value
+	for (int i=0; i<t2.data.size(); ++i) {										//iterate through table of values to update
+		update_index = t1->find(t2.data[i]);									//get index of the value we want to update
+		if (update_index >= 0) {												//if the index to be updated is valid
+			for (int j=0; j<attribute_names.size(); ++j) {						//iterate through NEW attributes
+				for (int k=0; k<t1->attributes.size(); ++k)						//iterate thourgh EXISTING attributes
+					if (t1->attributes[k] == attribute_names[j]) {				//if NEW = EXISTING
+						if(t1->data[update_index].size() < k+1)					//Discord update
+							t1->data[update_index].push_back(values[j]);
+						else
+							t1->data[update_index][k] = values[j];				//set table's data to the NEW value
 					}
 			}
 		}
@@ -283,7 +370,7 @@ void db_engine::insert_cmd(Table *t, vector<string> values) {
 	    if(compatible(t, values)){
 	      t->data.push_back(values);										//add the new data tuple into the table
 	    }else{
-	    	cerr<< "not compatible for insert";
+	    	cerr << "not compatible for insert";
 	    	out_message("Not compatible for insert.");
 	    	return;
 	    }
