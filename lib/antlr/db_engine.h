@@ -1,5 +1,6 @@
 #include <string>
 #include <vector>
+#include <pthread.h>
 #include "Table.h"
 
 class db_engine {
@@ -9,10 +10,12 @@ public:
 	~db_engine();
 	vector<Table*> open_tables;
 	vector<Table*> queries;
-	Table *current = NULL;
 	uint64_t id_c;
 	string user_id;
+	pthread_mutex_t* write_lock;
+	bool lock_check = false;
 	
+	bool user_info(Table t);
 	void out_message(string msg); 
 	Table* find_table_by_name(string);
 	Table* find_table_by_query(string);
