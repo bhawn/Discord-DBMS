@@ -1,5 +1,7 @@
 # Discord-DBMS
-Please note that ~~this is still heavily under development and that~~ there is a lot of useless code from implementing the DBMS project into the discord bot. (Currently undergoing rewrite of non-dbms section of code so the dbms has been put on hold.)
+Currently undergoing rewrite of non-dbms section of code so the dbms has been put on hold.  
+
+Please note that ~~this is still heavily under development and that~~ there is a lot of useless code from implementing the DBMS project into the discord bot.
 
 ### Discord-DBMS uses the following libraries:
 * [Discordpp (& its included libraries)](https://github.com/Aidoboy/discordpp)  
